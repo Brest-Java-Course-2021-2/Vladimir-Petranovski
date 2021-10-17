@@ -1,9 +1,12 @@
 package com.epam.brest.autobase;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
-public class ApplicationTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.*;
 
-    public void testMain() {
+class ApplicationTest {
+
+    @Test
+    void main() {
     }
 }

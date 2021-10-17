@@ -7,5 +7,27 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="requestController"
+          class="com.epam.brest.autobase.controllers.RequestController">
+    </bean>
+    <bean id="driverController"
+    class="com.epam.brest.autobase.controllers.DriverController">
 
+    </bean>
+    <bean id="carController"
+          class="com.epam.brest.autobase.controllers.CarController">
+
+    </bean>
+    <bean id="carService"
+          class="com.epam.brest.autobase.service.CarService">
+
+    </bean>
+    <bean id="driverService"
+          class="com.epam.brest.autobase.service.DriverService">
+
+    </bean>
+    <bean id="requestService"
+          class="com.epam.brest.autobase.service.RequestService">
+
+    </bean>
 </beans>
