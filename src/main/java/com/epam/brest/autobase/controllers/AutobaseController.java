@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/autobase/requests")
-public class RequestController {
+@RequestMapping("/autobase")
+public class AutobaseController {
 
     @GetMapping()
-    public ModelAndView getRequestList() {
-        ModelAndView modelAndView = new ModelAndView("requests/request");
+    public ModelAndView showAutobase() {
+        ModelAndView modelAndView = new ModelAndView("autobase");
         return modelAndView;
     }
 }
