@@ -8,26 +8,44 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="requestController"
-          class="com.epam.brest.autobase.controllers.RequestController">
+          class="com.epam.brest.autobase.controllers.RequestController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
     </bean>
     <bean id="driverController"
-    class="com.epam.brest.autobase.controllers.DriverController">
+    class="com.epam.brest.autobase.controllers.DriverController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
 
     </bean>
     <bean id="carController"
-          class="com.epam.brest.autobase.controllers.CarController">
+          class="com.epam.brest.autobase.controllers.CarController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="autobaseController"
+          class="com.epam.brest.autobase.controllers.AutobaseController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
 
     </bean>
     <bean id="carService"
-          class="com.epam.brest.autobase.service.CarService">
+          class="com.epam.brest.autobase.services.CarService"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
 
     </bean>
     <bean id="driverService"
-          class="com.epam.brest.autobase.service.DriverService">
+          class="com.epam.brest.autobase.services.DriverService"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
 
     </bean>
     <bean id="requestService"
-          class="com.epam.brest.autobase.service.RequestService">
+          class="com.epam.brest.autobase.services.RequestService"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
 
     </bean>
 </beans>
