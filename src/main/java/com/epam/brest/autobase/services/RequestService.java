@@ -1,4 +1,6 @@
 package com.epam.brest.autobase.services;
 
-public class RequestService implements IService{
+import com.epam.brest.autobase.interfaces.IInitAndDestroyBean;
+
+public class RequestService implements IInitAndDestroyBean {
 }

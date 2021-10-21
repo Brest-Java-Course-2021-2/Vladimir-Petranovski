@@ -1,4 +1,6 @@
 package com.epam.brest.autobase.services;
 
-public class DriverService implements IService{
+import com.epam.brest.autobase.interfaces.IInitAndDestroyBean;
+
+public class DriverService implements IInitAndDestroyBean {
 }

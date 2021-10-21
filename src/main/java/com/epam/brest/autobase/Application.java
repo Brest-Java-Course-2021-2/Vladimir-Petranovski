@@ -1,9 +1,6 @@
 package com.epam.brest.autobase;
 
 import com.epam.brest.autobase.controllers.CarController;
-import com.epam.brest.autobase.dao.models.Car;
-import com.epam.brest.autobase.dao.models.Driver;
-import com.epam.brest.autobase.dao.models.Request;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Application {

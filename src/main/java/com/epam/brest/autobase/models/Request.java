@@ -1,4 +1,4 @@
-package com.epam.brest.autobase.dao.models;
+package com.epam.brest.autobase.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Car {
+public class Request {
 
     private Long id;
-    private String model;
-    private Boolean isServiceable;
+    private String name;
     private Driver driver;
+
 }

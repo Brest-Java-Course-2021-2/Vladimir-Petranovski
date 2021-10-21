@@ -1,4 +1,4 @@
-package com.epam.brest.autobase.dao.models;
+package com.epam.brest.autobase.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

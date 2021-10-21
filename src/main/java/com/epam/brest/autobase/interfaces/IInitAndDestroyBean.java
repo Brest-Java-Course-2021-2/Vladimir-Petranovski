@@ -1,10 +1,8 @@
-package com.epam.brest.autobase.controllers;
+package com.epam.brest.autobase.interfaces;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static com.epam.brest.autobase.logger.MyLogger.*;
 
-public interface IController {
-    Logger log = LoggerFactory.getLogger(IController.class);
+public interface IInitAndDestroyBean {
 
     default void initMethod() {
         log.info("Initialisation bean {}", getClass().getName());
