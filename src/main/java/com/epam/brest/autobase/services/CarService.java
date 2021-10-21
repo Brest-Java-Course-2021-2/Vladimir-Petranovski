@@ -1,4 +1,6 @@
 package com.epam.brest.autobase.services;
 
-public class CarService implements IService{
+import com.epam.brest.autobase.interfaces.IInitAndDestroyBean;
+
+public class CarService implements IInitAndDestroyBean {
 }

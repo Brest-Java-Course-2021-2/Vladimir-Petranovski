@@ -1,6 +1,6 @@
 package com.epam.brest.autobase.controllers;
 
-import org.springframework.stereotype.Controller;
+import com.epam.brest.autobase.interfaces.IInitAndDestroyBean;
 
-public class DriverController implements IController{
+public class DriverController implements IInitAndDestroyBean {
 }
