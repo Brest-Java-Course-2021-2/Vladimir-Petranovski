@@ -5,7 +5,25 @@
     <title>Requests</title>
 </head>
 <body>
-  Hello)
+<center>
+    <h1>Requests</h1>
+    <hr>
+    <div>
+        <table border="1">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Driver</th>
+                <th scope="col"> Car's count</th>
+            </thead>
+            <tbody>
+            <tr th:each="request : ${requestList}">
+                <td th:text="${request.getName()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</center>
 </body>
 <hr>
 <footer>
