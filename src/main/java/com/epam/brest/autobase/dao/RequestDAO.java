@@ -19,6 +19,7 @@ public class RequestDAO implements IInitAndDestroyBean {
     public List<Request> findAll() {
         List<Request> requests = new ArrayList<>();
         try (Connection connection = getConnection()) {
+            log.info("Connection established");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(REQUEST_FIND_ALL);
             while (resultSet.next()) {
@@ -29,7 +30,7 @@ public class RequestDAO implements IInitAndDestroyBean {
                 requests.add(request);
                 log.info("Request's list was create --- {}", requests);
             }
-        } catch (SQLException throwables) {
+        } catch (SQLException | ClassNotFoundException throwables) {
             log.info("Request's list wasn't create");
             throwables.printStackTrace();
         }

@@ -14,70 +14,25 @@ import static com.epam.brest.autobase.logger.MyLogger.log;
 
 public class JDBCConfiguration implements IInitAndDestroyBean {
 
-    private static final Properties properties = new Properties();
-    private static final String URL;
-    static Connection connection;
-
-    static {
-        try {
-            properties.load(new FileInputStream("src/main/resources/jdbc.properties"));
-            String driverName = properties.getProperty("jdbc.driverClassName");
+    public static Connection getConnection() throws SQLException, ClassNotFoundException {
+        Properties properties = new JDBCConfiguration().getProperties();
+        String driverName = properties.getProperty("jdbc.driverClassName");
             Class.forName(driverName);
             log.info("Properties loaded {}", properties);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        return DriverManager.getConnection(
+                properties.getProperty("jdbc.url"),
+                properties.getProperty("jdbc.username"),
+                properties.getProperty("jdbc.password"));
+    }
+
+    private Properties getProperties() {
+        try (InputStream inputStream = getClass().getResourceAsStream("/jdbc.properties")) {
+             Properties properties = new Properties();
+             properties.load(inputStream);
+            return properties;
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            return null;
         }
-        URL = properties.getProperty("jdbc.url");
     }
-
-    public static Connection getConnection() throws SQLException {
-            connection = DriverManager.getConnection(URL, properties);
-            return connection;
-    }
-
-//    public static Connection getConnection() throws SQLException {
-//        Properties properties = new JDBCConfiguration().getProperties();
-//        return DriverManager.getConnection(
-//                properties.getProperty("jdbc.url"),
-//                properties.getProperty("jdbc.username"),
-//                properties.getProperty("jdbc.password"));
-//    }
-
-//    private Properties getProperties() {
-////        try(InputStream in = new FileInputStream("src/main/resources/jdbc.properties")) {
-////            Properties properties = new Properties();
-////            properties.load(in);
-////            return properties;
-////        } catch (Exception e) {
-////            log.info("Could't find properties");
-////            e.printStackTrace();
-////            return null;
-////        }
-//
-//        try (InputStream inputStream = getClass().getResourceAsStream("/src/main/resources/jdbc.properties");
-//             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-//             BufferedReader bufferedReader = new BufferedReader(inputStreamReader)) {
-//            Properties properties = new Properties();
-//            while (bufferedReader.readLine() != null) {
-//                properties.load(bufferedReader);
-//            }
-//            return properties;
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-////        try {
-////            Properties properties = new Properties();
-////            properties.load(new FileReader("src/main/resources/jdbc.properties"));
-////            return properties;
-////        } catch (Exception e) {
-////            log.info("Could't find properties");
-////            e.printStackTrace();
-////            return null;
-////        }
-//    }
 }
