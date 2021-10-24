@@ -28,12 +28,16 @@ public class RequestDAO implements IInitAndDestroyBean {
                 request.setName(resultSet.getString("name"));
                 request.setDriver_id(resultSet.getInt("driver_id"));
                 requests.add(request);
-                log.info("Request's list was create --- {}", requests);
             }
+            log.info("Request's list was create --- {}", requests);
         } catch (SQLException | ClassNotFoundException throwables) {
             log.info("Request's list wasn't create");
             throwables.printStackTrace();
         }
         return requests;
+    }
+
+    public static void main(String[] args) {
+        log.info("{}", new RequestDAO().findAll());
     }
 }

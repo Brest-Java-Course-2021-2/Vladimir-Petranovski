@@ -14,9 +14,10 @@
             <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Driver</th>
-                <th scope="col"> Car's count</th>
+                <th scope="col">Car's count</th>
             </thead>
             <tbody>
+            <!--/*@thymesVar id="requestList" type="com.epam.brest.autobase.models.Request"*/-->
             <tr th:each="request : ${requestList}">
                 <td th:text="${request.getName()}"></td>
             </tr>
