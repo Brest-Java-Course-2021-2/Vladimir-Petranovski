@@ -12,12 +12,16 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.epam.brest.autobase"/>
+    <context:property-placeholder location="classpath:jdbc.properties"/>
 
     <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
 
     <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".html"/>
+        <property name="templateMode" value="HTML5"/>
+        <property name="cacheable" value="true" />
     </bean>
 
     <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
@@ -29,5 +33,85 @@
         <property name="templateEngine" ref="templateEngine"/>
         <property name="order" value="1"/>
         <property name="viewNames" value="*"/>
+    </bean>
+
+    <bean id="request"
+          class="com.epam.brest.autobase.models.Request"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+    </bean>
+    <bean id="driver"
+          class="com.epam.brest.autobase.models.Driver"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="car"
+          class="com.epam.brest.autobase.models.Car"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+
+    <bean id="requestController"
+          class="com.epam.brest.autobase.controllers.RequestController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+        <constructor-arg ref="requestService"/>
+    </bean>
+    <bean id="driverController"
+          class="com.epam.brest.autobase.controllers.DriverController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="carController"
+          class="com.epam.brest.autobase.controllers.CarController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="autobaseController"
+          class="com.epam.brest.autobase.controllers.AutobaseController"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="carService"
+          class="com.epam.brest.autobase.services.CarService"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="driverService"
+          class="com.epam.brest.autobase.services.DriverService"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="requestService"
+          class="com.epam.brest.autobase.services.RequestService"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+        <constructor-arg ref="requestDAO"/>
+    </bean>
+
+    <bean id="queries"
+          class="com.epam.brest.autobase.dao.Queries"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+    <bean id="requestDAO"
+          class="com.epam.brest.autobase.dao.RequestDAO"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+    </bean>
+
+    <bean id="jDBCConfiguration"
+          class="com.epam.brest.autobase.config.JDBCConfiguration"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
     </bean>
 </beans>

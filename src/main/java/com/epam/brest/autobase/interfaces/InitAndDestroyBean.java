@@ -1,8 +1,8 @@
 package com.epam.brest.autobase.interfaces;
 
-import static com.epam.brest.autobase.logger.MyLogger.*;
+import static com.epam.brest.autobase.logger.Logging.*;
 
-public interface IInitAndDestroyBean {
+public interface InitAndDestroyBean {
 
     default void initMethod() {
         log.info("Initialisation bean {}", getClass().getName());

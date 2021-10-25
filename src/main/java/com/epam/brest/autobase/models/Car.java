@@ -1,16 +1,19 @@
 package com.epam.brest.autobase.models;
 
+import com.epam.brest.autobase.interfaces.InitAndDestroyBean;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Car {
+public class Car implements InitAndDestroyBean, Serializable {
 
-    private Long id;
+    private Integer id;
     private String model;
     private Boolean isServiceable;
-    private Driver driver;
+    private Integer driver_id;
 }
