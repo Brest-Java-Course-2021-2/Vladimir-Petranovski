@@ -1,18 +1,16 @@
 package com.epam.brest.autobase.config;
 
-import com.epam.brest.autobase.interfaces.IInitAndDestroyBean;
-import com.epam.brest.autobase.logger.MyLogger;
+import com.epam.brest.autobase.interfaces.InitAndDestroyBean;
 
 import java.io.*;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-import static com.epam.brest.autobase.logger.MyLogger.log;
+import static com.epam.brest.autobase.logger.Logging.log;
 
-public class JDBCConfiguration implements IInitAndDestroyBean {
+public class JDBCConfiguration implements InitAndDestroyBean {
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Properties properties = new JDBCConfiguration().getProperties();

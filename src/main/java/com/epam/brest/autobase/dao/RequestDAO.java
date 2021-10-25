@@ -1,6 +1,6 @@
 package com.epam.brest.autobase.dao;
 
-import com.epam.brest.autobase.interfaces.IInitAndDestroyBean;
+import com.epam.brest.autobase.interfaces.InitAndDestroyBean;
 import com.epam.brest.autobase.models.Request;
 
 import java.sql.Connection;
@@ -12,9 +12,9 @@ import java.util.List;
 
 import static com.epam.brest.autobase.config.JDBCConfiguration.getConnection;
 import static com.epam.brest.autobase.dao.Queries.REQUEST_FIND_ALL;
-import static com.epam.brest.autobase.logger.MyLogger.log;
+import static com.epam.brest.autobase.logger.Logging.log;
 
-public class RequestDAO implements IInitAndDestroyBean {
+public class RequestDAO implements InitAndDestroyBean {
 
     public List<Request> findAll() {
         List<Request> requests = new ArrayList<>();
@@ -35,9 +35,5 @@ public class RequestDAO implements IInitAndDestroyBean {
             throwables.printStackTrace();
         }
         return requests;
-    }
-
-    public static void main(String[] args) {
-        log.info("{}", new RequestDAO().findAll());
     }
 }
