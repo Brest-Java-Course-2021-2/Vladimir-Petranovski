@@ -12,7 +12,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Car implements InitAndDestroyBean, Serializable {
 
-    private Integer id;
+    private Integer car_id;
     private String model;
     private Boolean isServiceable;
     private Integer driver_id;

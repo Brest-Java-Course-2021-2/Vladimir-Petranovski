@@ -24,7 +24,7 @@ public class RequestDAO implements InitAndDestroyBean {
             ResultSet resultSet = statement.executeQuery(REQUEST_FIND_ALL);
             while (resultSet.next()) {
                 Request request = new Request();
-                request.setId((resultSet.getInt("id")));
+                request.setRequest_id((resultSet.getInt("request_id")));
                 request.setName(resultSet.getString("name"));
                 request.setDriver_id(resultSet.getInt("driver_id"));
                 requests.add(request);
