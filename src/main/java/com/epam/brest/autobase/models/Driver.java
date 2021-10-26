@@ -14,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Driver implements InitAndDestroyBean, Serializable {
 
-    private Integer id;
+    private Integer driver_id;
     private String name;
     private Date dateWhenGotJob;
     private BigDecimal salary;

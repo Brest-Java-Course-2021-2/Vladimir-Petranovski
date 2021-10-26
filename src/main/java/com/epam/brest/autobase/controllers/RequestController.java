@@ -5,6 +5,7 @@ import com.epam.brest.autobase.services.RequestService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @RequestMapping("/autobase/requests")
 public class RequestController implements InitAndDestroyBean {
@@ -15,9 +16,16 @@ public class RequestController implements InitAndDestroyBean {
         this.requestService = requestService;
     }
 
+//    @GetMapping()
+//    public String getRequestList(Model model) {
+//            model.addAttribute("requestList", requestService.findAllRequest());
+//            return "requests/request";
+//    }
+
     @GetMapping()
-    public String getRequestList(Model model) {
-            model.addAttribute("requestList", requestService.findAllRequest());
-            return "requests/request";
+    public ModelAndView getRequestList() {
+        ModelAndView modelAndView = new ModelAndView("requests/request");
+        modelAndView.addObject("requestList", requestService.findAllRequest());
+        return modelAndView;
     }
 }
