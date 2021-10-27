@@ -19,7 +19,7 @@ public class RequestDAO implements InitAndDestroyBean {
     public List<Request> findAll() {
         List<Request> requests = new ArrayList<>();
         try (Connection connection = getConnection()) {
-            log.info("Connection established");
+            log.info("Connection established " + getClass().getName());
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(REQUEST_FIND_ALL);
             while (resultSet.next()) {
