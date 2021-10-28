@@ -43,7 +43,7 @@
 <ul> - зарплата водителя</ul>
 <ul> - ссылка "Update driver" для обновления данных водителя</ul>
 <ul> - ссылка "Delete driver" для удаления водителя из списка</ul>
-#![drivers](https://user-images.githubusercontent.com/67960868/139144307-3cb04da9-242b-4fbc-a73f-5ffe11b44a1a.png)
+![drivers](https://user-images.githubusercontent.com/67960868/139144307-3cb04da9-242b-4fbc-a73f-5ffe11b44a1a.png?raw=true)
 Основной сценарий:
 <ul> - Диспетчер нажимает на ссылку "Add driver" и появляется форма добавления водителя.</ul>
  --фото добавления
