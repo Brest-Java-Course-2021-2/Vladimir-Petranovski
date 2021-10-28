@@ -10,7 +10,6 @@
  <h3>1.1 Главное меню</h3>
 Данный режим программы предназначен для перехода к списку заявок на рейсы, к списку водителей, к списку машин парка.
 Основной сценарий:
- ![alt text](file:///home/vavan/%D0%98%DB7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/drivers.png?raw=true)
  ![autobase](https://user-images.githubusercontent.com/67960868/139327422-f928f815-36d9-4b02-b731-437353d3f4be.png)
 
 <ul> - Пользователь нажимает на кнопку "Заявки".</ul>
@@ -44,7 +43,7 @@
 <ul> - зарплата водителя</ul>
 <ul> - ссылка "Update driver" для обновления данных водителя</ul>
 <ul> - ссылка "Delete driver" для удаления водителя из списка</ul>
-![drivers](https://user-images.githubusercontent.com/67960868/139212355-37773310-9c5d-40b1-89a8-76ef5bcbd2bd.png?raw=true)
+![drivers](https://user-images.githubusercontent.com/67960868/139327762-bda1ed5b-0335-41e7-9001-f4ec1232adb3.png)
 Основной сценарий:
 <ul> - Диспетчер нажимает на ссылку "Add driver" и появляется форма добавления водителя.</ul>
  --фото добавления
