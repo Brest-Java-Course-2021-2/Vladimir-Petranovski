@@ -69,7 +69,7 @@
           class="com.epam.brest.autobase.controllers.CarController"
           init-method="initMethod"
           destroy-method="destroyMethod">
-
+        <constructor-arg ref="carService"/>
     </bean>
     <bean id="autobaseController"
           class="com.epam.brest.autobase.controllers.AutobaseController"
@@ -81,7 +81,7 @@
           class="com.epam.brest.autobase.services.CarService"
           init-method="initMethod"
           destroy-method="destroyMethod">
-
+        <constructor-arg ref="carDAO"/>
     </bean>
     <bean id="driverService"
           class="com.epam.brest.autobase.services.DriverService"
@@ -108,6 +108,11 @@
     </bean>
     <bean id="driverDAO"
           class="com.epam.brest.autobase.dao.DriverDAO"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+    </bean>
+    <bean id="carDAO"
+          class="com.epam.brest.autobase.dao.CarDAO"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>
