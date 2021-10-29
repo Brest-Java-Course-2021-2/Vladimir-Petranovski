@@ -1,15 +1,16 @@
 package com.epam.brest.autobase.dao;
 
-import com.epam.brest.autobase.config.JDBCConfiguration;
 import com.epam.brest.autobase.interfaces.InitAndDestroyBean;
 import com.epam.brest.autobase.models.Driver;
 
-import java.sql.*;
-import java.time.LocalDate;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.epam.brest.autobase.config.JDBCConfiguration.*;
+import static com.epam.brest.autobase.config.JDBCConfiguration.getConnection;
 import static com.epam.brest.autobase.dao.Queries.*;
 import static com.epam.brest.autobase.logger.Logging.log;
 
@@ -39,6 +40,7 @@ public class DriverDAO implements InitAndDestroyBean {
 
     public void saveDriverDAO(Driver driver) {
         try(Connection connection = getConnection()) {
+            log.info("Connection established in " + getClass().getName());
             PreparedStatement preparedStatement = connection.prepareStatement(DRIVER_SAVE);
             preparedStatement.setString(1, driver.getName());
             preparedStatement.setDate(2, driver.getDateStartWork());
@@ -53,6 +55,7 @@ public class DriverDAO implements InitAndDestroyBean {
 
     public Driver findDriverByIdDAO(Integer id) {
         try(Connection connection = getConnection()) {
+            log.info("Connection established in " + getClass().getName());
             PreparedStatement preparedStatement = connection.prepareStatement(DRIVER_FIND_BY_ID);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -72,6 +75,7 @@ public class DriverDAO implements InitAndDestroyBean {
 
     public void updateDriverDAO(Integer driver_id, Driver driver) {
         try(Connection connection = getConnection()) {
+            log.info("Connection established in " + getClass().getName());
             PreparedStatement preparedStatement = connection.prepareStatement(DRIVER_UPDATE);
             preparedStatement.setInt(1, driver_id);
             preparedStatement.setString(2, driver.getName());
@@ -88,6 +92,7 @@ public class DriverDAO implements InitAndDestroyBean {
 
     public void deleteDriverDAO(Integer driver_id) {
         try(Connection connection = getConnection()) {
+            log.info("Connection established in " + getClass().getName());
             PreparedStatement preparedStatement = connection.prepareStatement(DRIVER_DELETE);
             preparedStatement.setInt(1, driver_id);
             preparedStatement.executeUpdate();
