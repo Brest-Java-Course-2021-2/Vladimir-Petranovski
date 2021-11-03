@@ -94,10 +94,16 @@
           init-method="initMethod"
           destroy-method="destroyMethod">
         <constructor-arg ref="requestDAO"/>
+        <constructor-arg ref="requestDTO"/>
     </bean>
 
     <bean id="queries"
           class="com.epam.brest.autobase.dao.Queries"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+    </bean>
+    <bean id="requestDTO"
+          class="com.epam.brest.autobase.dao.dto.RequestDTO"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>

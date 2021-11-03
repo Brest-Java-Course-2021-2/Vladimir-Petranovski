@@ -7,20 +7,30 @@
 <body>
 <center>
     <h1>Requests</h1>
+    <br>
+    <a th:href="@{/requests/new-request}">Add request</a>
     <hr>
     <div>
         <table border="1">
             <thead>
             <tr>
                 <th scope="col">Name</th>
-                <th scope="col">Driver</th>
-                <th scope="col">Car's count</th>
+                <th scope="col">Unique number driver</th>
+<!--                <th scope="col">Car's count</th>-->
+                <th scope="col">Update request</th>
+                <th scope="col">Delete request</th>
             </thead>
             <tbody>
             <tr th:each="request : ${requestList}">
                 <td th:text="${request.getName()}"/>
-                <td></td>
-                <td></td>
+                <td th:text="${request.getDriver_id()}"></td>
+<!--                <td></td>-->
+                <td>
+                    <a th:href="@{/requests/{id}/update(id=${request.getRequest_id()})}" th:text="'Update request ' + ${request.getName()}"></a>
+                </td>
+                <td>
+                    <a th:href="@{/requests/{id}/delete(id=${request.getRequest_id()})}" th:text="'Delete request ' + ${request.getName()}"></a>
+                </td>
             </tr>
             </tbody>
         </table>

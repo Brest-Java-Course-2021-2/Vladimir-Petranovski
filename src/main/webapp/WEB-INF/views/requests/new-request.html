@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form for adding request</title>
+</head>
+<body>
+    <h1>Form for adding request</h1>
+    <br/>
+    <form th:method="POST" th:action="@{/requests}" th:object="${request}">
+        <label for="name">Enter name request: </label>
+        <input type="text" th:field="*{name}" id="name">
+        <br/>
+        <label for="driver_id">Enter unique number of driver: </label>
+        <input type="text" th:field="*{driver_id}" id="driver_id">
+        <br/>
+        <input type="submit" value="Add request"/>
+        <button><a th:href="@{/requests}"></a>Cancel</button>
+    </form>
+</body>
+</html>
