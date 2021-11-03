@@ -11,7 +11,7 @@
     	http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="com.epam.brest.autobase"/>
+    <context:component-scan base-package="com.epam.brest.motor_depot"/>
     <context:property-placeholder location="classpath:jdbc.properties"/>
 
     <mvc:annotation-driven/>
@@ -36,61 +36,62 @@
     </bean>
 
     <bean id="request"
-          class="com.epam.brest.autobase.models.Request"
+          class="com.epam.brest.motor_depot.models.Request"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>
     <bean id="driver"
-          class="com.epam.brest.autobase.models.Driver"
+          class="com.epam.brest.motor_depot.models.Driver"
           init-method="initMethod"
           destroy-method="destroyMethod">
 
     </bean>
     <bean id="car"
-          class="com.epam.brest.autobase.models.Car"
+          class="com.epam.brest.motor_depot.models.Car"
           init-method="initMethod"
           destroy-method="destroyMethod">
 
     </bean>
 
     <bean id="requestController"
-          class="com.epam.brest.autobase.controllers.RequestController"
+          class="com.epam.brest.motor_depot.controllers.RequestController"
           init-method="initMethod"
           destroy-method="destroyMethod">
         <constructor-arg ref="requestService"/>
     </bean>
     <bean id="driverController"
-          class="com.epam.brest.autobase.controllers.DriverController"
+          class="com.epam.brest.motor_depot.controllers.DriverController"
           init-method="initMethod"
           destroy-method="destroyMethod">
         <constructor-arg ref="driverService"/>
     </bean>
     <bean id="carController"
-          class="com.epam.brest.autobase.controllers.CarController"
+          class="com.epam.brest.motor_depot.controllers.CarController"
           init-method="initMethod"
           destroy-method="destroyMethod">
         <constructor-arg ref="carService"/>
     </bean>
     <bean id="autobaseController"
-          class="com.epam.brest.autobase.controllers.AutobaseController"
+          class="com.epam.brest.motor_depot.controllers.AutobaseController"
           init-method="initMethod"
           destroy-method="destroyMethod">
 
     </bean>
     <bean id="carService"
-          class="com.epam.brest.autobase.services.CarService"
+          class="com.epam.brest.motor_depot.services.CarService"
           init-method="initMethod"
           destroy-method="destroyMethod">
         <constructor-arg ref="carDAO"/>
     </bean>
     <bean id="driverService"
-          class="com.epam.brest.autobase.services.DriverService"
+          class="com.epam.brest.motor_depot.services.DriverService"
           init-method="initMethod"
           destroy-method="destroyMethod">
         <constructor-arg ref="driverDAO"/>
+        <constructor-arg ref="driverDTO"/>
     </bean>
     <bean id="requestService"
-          class="com.epam.brest.autobase.services.RequestService"
+          class="com.epam.brest.motor_depot.services.RequestService"
           init-method="initMethod"
           destroy-method="destroyMethod">
         <constructor-arg ref="requestDAO"/>
@@ -98,33 +99,38 @@
     </bean>
 
     <bean id="queries"
-          class="com.epam.brest.autobase.dao.Queries"
+          class="com.epam.brest.motor_depot.dao.Queries"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>
     <bean id="requestDTO"
-          class="com.epam.brest.autobase.dao.dto.RequestDTO"
+          class="com.epam.brest.motor_depot.dao.dto.RequestDTO"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+    </bean>
+    <bean id="driverDTO"
+          class="com.epam.brest.motor_depot.dao.dto.DriverDTO"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>
     <bean id="requestDAO"
-          class="com.epam.brest.autobase.dao.RequestDAO"
+          class="com.epam.brest.motor_depot.dao.RequestDAO"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>
     <bean id="driverDAO"
-          class="com.epam.brest.autobase.dao.DriverDAO"
+          class="com.epam.brest.motor_depot.dao.DriverDAO"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>
     <bean id="carDAO"
-          class="com.epam.brest.autobase.dao.CarDAO"
+          class="com.epam.brest.motor_depot.dao.CarDAO"
           init-method="initMethod"
           destroy-method="destroyMethod">
     </bean>
 
     <bean id="jDBCConfiguration"
-          class="com.epam.brest.autobase.config.JDBCConfiguration"
+          class="com.epam.brest.motor_depot.config.JDBCConfiguration"
           init-method="initMethod"
           destroy-method="destroyMethod">
 
