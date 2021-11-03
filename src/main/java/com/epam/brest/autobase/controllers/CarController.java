@@ -44,7 +44,7 @@ public class CarController implements InitAndDestroyBean {
         return "redirect:/cars";
     }
 
-    @GetMapping("/{car_id}")
+    @GetMapping("/{car_id}/delete")
     public String deleteCar(@PathVariable("car_id") Integer car_id) {
         carService.deleteCar(car_id);
         return "redirect:/cars";

@@ -44,7 +44,7 @@ public class DriverController implements InitAndDestroyBean {
         return "redirect:/drivers";
     }
 
-    @GetMapping("/{driver_id}")
+    @GetMapping("/{driver_id}/delete")
     public String deleteDriver(@PathVariable("driver_id") Integer driver_id) {
         driverService.deleteDriver(driver_id);
         return "redirect:/drivers";

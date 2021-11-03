@@ -2,6 +2,7 @@ package com.epam.brest.autobase.config;
 
 import com.epam.brest.autobase.controllers.RequestController;
 import com.epam.brest.autobase.dao.RequestDAO;
+import com.epam.brest.autobase.dao.dto.RequestDTO;
 import com.epam.brest.autobase.services.RequestService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,11 +19,16 @@ public class TestConfig {
 
     @Bean
     RequestService requestService() {
-        return new RequestService(requestDAO());
+        return new RequestService(requestDAO(), requestDTO());
     }
 
     @Bean
     RequestDAO requestDAO() {
         return new RequestDAO();
+    }
+
+    @Bean
+    RequestDTO requestDTO() {
+        return new RequestDTO();
     }
 }

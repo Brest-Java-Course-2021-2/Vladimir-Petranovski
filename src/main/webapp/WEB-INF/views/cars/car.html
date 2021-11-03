@@ -29,7 +29,7 @@
                     <a th:href="@{/cars/{id}/update(id=${car.getCar_id()})}" th:text="'Update car ' + ${car.getModel()}"></a>
                 </td>
                 <td>
-                    <a th:href="@{/cars/{id}(id=${car.getCar_id()})}" th:text="'Delete car ' + ${car.getModel()}"></a>
+                    <a th:href="@{/cars/{id}/delete(id=${car.getCar_id()})}" th:text="'Delete car ' + ${car.getModel()}"></a>
                 </td>
             </tr>
             </tbody>
